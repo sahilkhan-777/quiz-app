@@ -1,5 +1,6 @@
 import { useState } from "react";
 import quizData from "../questions";
+import QuizEnd from "./QuizEnd";
 
 function Quiz(){
     const [index, setIndex] = useState(0);
@@ -17,7 +18,9 @@ function Quiz(){
         if(selected === quizData[index].answer){
             setScore(prev => prev + 1);
         }
-        nextQuestion();
+        setTimeout(() => {
+            nextQuestion();
+        }, 1000);
     }
 
     function nextQuestion(){
@@ -28,24 +31,22 @@ function Quiz(){
 
     function prevQuestion(event){
         setIndex(prev => prev - 1);
-        // if(index > 0){
-        //     setIndex(prev => prev - 1);
-        // }
-        // else{
-        //     event.target.disabled = true;
-        // }
         setAnswered(false);
         setSelected(null);
     }
 
+    function endQuiz(){
+        setIndex(0);
+        setScore(0);
+    }
+
     return(
         <div className="quiz">
-            <h2>Quiz</h2>
-            <p>Score: {score}</p>
-            <p>{quizData[index].id}. {quizData[index].question}</p>
+            <p className="score-board">Score: {score}</p>
+            <p className="question">{quizData[index].id}. {quizData[index].question}</p>
             <form onSubmit={checkAnswer}>
             {quizData[index].options.map((option, i) => (
-                <div key={i}>
+                <div key={i} className={`option ${answered && option === quizData[index].answer ? "correct" : ""} ${answered && option === selected && option !== quizData[index].answer ? "incorrect" : ""}`}>
                     <input
                         type="radio"
                         id={`option${i+1}`}
@@ -61,6 +62,7 @@ function Quiz(){
             <button disabled={index === quizData.length -1} type="button" onClick={nextQuestion}>Next</button>
             <button disabled={index === 0} type="button" onClick={prevQuestion}>Previous</button>
             </form>
+            {index === quizData.length - 1 && answered && <QuizEnd finalScore={score} totalQuestions={quizData.length} onRestart={endQuiz} />}
         </div>
     );
 }
