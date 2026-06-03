@@ -1,0 +1,23 @@
+.header{
+    width: 100%;
+    padding: 20px;
+    background-color: #747773;
+    text-align: center;
+}
+
+.quiz{
+    width: auto;
+    padding: 20px;
+    background-color: #a7e3ff;
+    height: 100vh;
+}
+
+.option.correct{
+    background-color: #4CAF50;
+    color: white;
+}
+
+.option.incorrect{
+    background-color: #f44336;
+    color: white;
+}
