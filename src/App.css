@@ -1,8 +1,32 @@
+:root{
+    --primary-color: #facc15;
+    --secondary-color: #162A40;
+    --bg-color: #e5e5e5;
+}
+
 .header{
     width: 100%;
     padding: 20px;
-    background-color: #747773;
-    text-align: center;
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+}
+
+.header h1{
+    display: flex;
+    justify-content: center;
+    text-transform: uppercase;
+    font-size: 3.5rem;
+}
+
+.header .icon{
+    margin-right: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.header .icon img{
+    width: 60px;
+    height: 60px;
 }
 
 .quiz{
@@ -20,4 +44,103 @@
 .option.incorrect{
     background-color: #f44336;
     color: white;
+}
+
+/* Score Component */
+.score{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 50%;
+    margin: 20px auto;
+    padding: 20px 40px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    background-color: #fff;
+}
+
+.score .score-board{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+}
+
+.score .icon{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #ffeeab;
+    padding: 16px;
+    border-radius: 50%;
+}
+
+.score .icon svg{
+    width: 50px;
+    height: 50px;
+}
+
+.score .score-text{
+    color: var(--secondary-color);
+}
+
+.score .score-text p{
+    font-size: 1.5rem;
+    text-transform: uppercase;
+}
+
+.score .score-text h2{
+    font-size: 3rem;
+}
+
+.score-percentage{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    border-left: 4px solid var(--bg-color);
+    padding-left: 40px;
+}
+
+.score-percentage p{
+    color: var(--secondary-color);
+}
+
+.progress-bar{
+    width: 100px;
+    height: 100px;
+}
+
+
+/* Quiz Component */
+.quiz{
+    width: 50%;
+    margin: 20px auto;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    height: auto;
+}
+
+
+.quiz .btn-group{
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    gap: 20px;
+}
+
+.quiz button{
+    padding: 10px 20px;
+    flex-grow: 1;
+    border: none;
+    border-radius: 5px;
+    color: var(--secondary-color);
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.quiz button svg{
+    width: 20px;
+    height: 20px;
 }
