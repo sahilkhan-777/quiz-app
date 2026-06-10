@@ -1,16 +1,64 @@
-# React + Vite
+# React Quiz App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A simple, interactive, and strictly validated quiz application built with React. This app presents users with a series of multiple-choice questions, tracks their score, and prevents them from skipping ahead without answering.
 
-Currently, two official plugins are available:
+## 🚀 Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+* **Step-by-Step Flow:** Renders one question at a time for a clean user experience.
+* **Strict Validation:** Navigation button "Next" remains disabled until the user selects and submits an answer.
+* **Instant Feedback:** Answers are visually highlighted as green(for correct) or red (for incorrect) upon submission.
+* **Score Tracking:** Keeps a running total of correct answers.
+* **Summary Screen:** Displays the final score and offers a "Restart" option at the end of the quiz.
 
-## React Compiler
+## 🛠️ Tech Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+* **React:** Utilizes Functional Components and React Hooks (`useState`) for local state management.
+* **Vanilla CSS:** Custom styling for components, interactive buttons, and validation states.
 
-## Expanding the ESLint configuration
+## 📦 Component Structure
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+* `App`: The main container managing the application state (`score`, `isCompleted`) and routing between the active quiz and the end screen.
+* `Quiz`: Handles the active question state, answer validation, and navigation logic.
+* `QuizEnd`: Displays the final score out of the total questions and provides a restart mechanism.
+* `Score`: A simple display component for the live score.
+* `Header` & `Footer`: Static layout components.
+
+## 💻 Running Locally
+
+To run this project on your local machine, follow these steps:
+
+### Prerequisites
+Make sure you have [Node.js](https://nodejs.org/) installed on your machine.
+
+### Installation
+
+1. **Clone the repository:**
+```bash
+   git clone <your-repo-url>
+```
+
+2. **Navigate to the project directory:**
+```cd react-quiz-app```
+
+3. **Install dependencies:**
+```npm install```
+
+4. **Start the development server:**
+```npm run dev```
+
+### 📝 Customizing Questions
+
+To add or change the quiz questions, locate the questions.js file in the src directory. The data should follow this structure:
+
+```
+const questions = [
+  {
+    question: "What is the capital of France?",
+    options: ["Berlin", "Madrid", "Paris", "Rome"],
+    answer: "Paris"
+  },
+  // Add more questions here...
+];
+
+export default questions;
+```
