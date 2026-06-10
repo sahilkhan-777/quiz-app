@@ -52,7 +52,7 @@ Make sure you have [Node.js](https://nodejs.org/) installed on your machine.
    npm run dev
 ```
 
-### 📝 Customizing Questions
+## 📝 Customizing Questions
 
 To add or change the quiz questions, locate the questions.js file in the src directory. The data should follow this structure:
 
@@ -68,3 +68,7 @@ const questions = [
 
 export default questions;
 ```
+
+## Future Improvements
+* Replace Vanilla CSS with Tailwind CSS 
+* Make the page responsive
