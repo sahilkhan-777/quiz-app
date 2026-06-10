@@ -259,3 +259,12 @@
 .quiz-end button:hover{
     background-color: #fa8f15;
 }
+
+/* Footer Component */
+footer{
+    background-color: var(--bg-color);
+    color: var(--secondary-color);
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+}
