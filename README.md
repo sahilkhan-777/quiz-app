@@ -38,13 +38,19 @@ Make sure you have [Node.js](https://nodejs.org/) installed on your machine.
 ```
 
 2. **Navigate to the project directory:**
-```cd react-quiz-app```
+```bash
+   cd react-quiz-app
+```
 
 3. **Install dependencies:**
-```npm install```
+```bash
+   npm install
+```
 
 4. **Start the development server:**
-```npm run dev```
+```bash
+   npm run dev
+```
 
 ### 📝 Customizing Questions
 
