@@ -1,63 +1,24 @@
+@import "tailwindcss";
+
 :root{
     --primary-color: #facc15;
     --secondary-color: #162A40;
     --bg-color: #e5e5e5;
 }
 
-.header{
-    width: 100%;
-    padding: 20px;
-    background-color: var(--primary-color);
-    color: var(--secondary-color);
-}
-
-.header h1{
-    display: flex;
-    justify-content: center;
-    text-transform: uppercase;
-    font-size: 3.5rem;
-}
-
-.header .icon{
-    margin-right: 10px;
-    display: flex;
-    align-items: center;
-}
-
-.header .icon img{
-    width: 60px;
-    height: 60px;
-}
-
 
 
 /* Score Component */
 .score{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
     width: 50%;
     margin: 20px auto;
     padding: 20px 40px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
-    background-color: #fff;
-}
-
-.score .score-board{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 50px;
 }
 
 .score .icon{
-    display: flex;
-    align-items: center;
-    justify-content: center;
     background-color: #ffeeab;
     padding: 16px;
-    border-radius: 50%;
 }
 
 .score .icon svg{
