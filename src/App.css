@@ -10,53 +10,19 @@
 
 /* Score Component */
 .score{
-    width: 50%;
     margin: 20px auto;
     padding: 20px 40px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .score .icon{
-    background-color: #ffeeab;
+    background-color: hsl(48, 100%, 84%);
     padding: 16px;
 }
 
-.score .icon svg{
-    width: 50px;
-    height: 50px;
-}
-
-.score .score-text{
-    color: var(--secondary-color);
-}
-
-.score .score-text p{
-    font-size: 1.5rem;
-    text-transform: uppercase;
-}
-
-.score .score-text h2{
-    font-size: 3rem;
-}
-
 .score-percentage{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
-    border-left: 4px solid var(--bg-color);
     padding-left: 40px;
 }
-
-.score-percentage p{
-    color: var(--secondary-color);
-}
-
-.progress-bar{
-    width: 100px;
-    height: 100px;
-}
-
 
 /* Quiz Component */
 .quiz, .quiz-end{
