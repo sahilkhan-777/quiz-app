@@ -7,12 +7,12 @@ function QuizEnd(props) {
   ];
 
   return (
-    <div className="quiz-end">
-      <h2>Quiz Completed!</h2>
-      <p>
+    <div className="quiz-end flex flex-col items-center justify-center gap-4 text-center text-blue-950">
+      <h2 className="text-2xl">Quiz Completed!</h2>
+      <p className="text-xl">
         Your answered {props.score} out of {props.totalQuestions} correctly.
       </p>
-      <p>
+      <p className="text-2xl">
         {props.score === 10
           ? messages[0]
           : props.score >= 7
@@ -21,7 +21,12 @@ function QuizEnd(props) {
               ? messages[2]
               : messages[3]}
       </p>
-      <button onClick={props.onRestart}>Restart Quiz</button>
+      <button
+        onClick={props.onRestart}
+        className="bg-yellow-400 text-blue-950 border-none rounded-sm text-xl cursor-pointer uppercase"
+      >
+        Restart Quiz
+      </button>
     </div>
   );
 }
