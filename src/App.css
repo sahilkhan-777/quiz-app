@@ -1,171 +1,152 @@
 @import "tailwindcss";
 
-:root{
-    --primary-color: #facc15;
-    --secondary-color: #162A40;
-    --bg-color: #e5e5e5;
+:root {
+  --primary-color: #facc15;
+  --secondary-color: #162a40;
+  --bg-color: #e5e5e5;
 }
 
-
-
-/* Score Component */
-.score{
-    margin: 20px auto;
-    padding: 20px 40px;
+@layer component {
+  /* Score Component */
+  .score {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.score .icon{
+  }
+  .score .icon {
     background-color: hsl(48, 100%, 84%);
-    padding: 16px;
-}
+  }
 
-.score-percentage{
-    padding-left: 40px;
+  /* QuizEnd Component */
+  .quiz-end button:hover {
+    background-color: #fa8f15;
+  }
 }
 
 /* Quiz Component */
-.quiz, .quiz-end{
-    width: 50%;
-    margin: 20px auto;
-    background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    height: auto;
-    padding: 20px;
+.quiz,
+.quiz-end {
+  width: 50%;
+  margin: 20px auto;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  height: auto;
+  padding: 20px;
 }
 
-.quiz input[type="radio"]{
-    display: none;
+.quiz input[type="radio"] {
+  display: none;
 }
 
-.quiz input[type="radio"]:checked + label{
-    background-color: #ffe476;
-    color: var(--secondary-color);
-    border-color: var(--primary-color);
+.quiz input[type="radio"]:checked + label {
+  background-color: #ffe476;
+  color: var(--secondary-color);
+  border-color: var(--primary-color);
 }
 
-.quiz .option-label{
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    padding: 8px 16px;
-    border: 2px solid var(--secondary-color);
-    font-size: 1.2rem;
-    border-radius: 5px;
-    margin-bottom: 10px;
-    cursor: pointer;
-    transition: background-color 0.3s, color 0.3s;
+.quiz .option-label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 16px;
+  border: 2px solid var(--secondary-color);
+  font-size: 1.2rem;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  transition:
+    background-color 0.3s,
+    color 0.3s;
 }
 
-.quiz .option-label span{
-    font-size: 1rem;
-    color: var(--secondary-color);
-    background-color: var(--primary-color);
-    padding: 6px 12px;
-    border-radius: 50%;
+.quiz .option-label span {
+  font-size: 1rem;
+  color: var(--secondary-color);
+  background-color: var(--primary-color);
+  padding: 6px 12px;
+  border-radius: 50%;
 }
 
-.quiz .question{
-    margin-bottom: 10px;
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: var(--secondary-color);
+.quiz .question {
+  margin-bottom: 10px;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--secondary-color);
 }
 
-.quiz .option-label.correct{
-    background-color: #85e788;
-    border-color: #2c882f;
+.quiz .option-label.correct {
+  background-color: #85e788;
+  border-color: #2c882f;
 }
 
-.quiz .option-label.incorrect{
-    background-color: #e9837c;
-    border-color: #d32f2f;
+.quiz .option-label.incorrect {
+  background-color: #e9837c;
+  border-color: #d32f2f;
 }
 
-
-.quiz .btn-group{
-    display: flex;
-    justify-content: space-between;
-    margin: 20px 0;
-    gap: 20px;
+.quiz .btn-group {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px 0;
+  gap: 20px;
 }
 
-.quiz button{
-    padding: 10px 20px;
-    flex-grow: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-    border: none;
-    border-radius: 5px;
-    color: var(--secondary-color);
-    font-size: 1rem;
-    cursor: pointer;
-    text-transform: uppercase;
+.quiz button {
+  padding: 10px 20px;
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  border: none;
+  border-radius: 5px;
+  color: var(--secondary-color);
+  font-size: 1rem;
+  cursor: pointer;
+  text-transform: uppercase;
 }
 
-.quiz button:disabled{
-    cursor: not-allowed;
-    opacity: 0.8;
+.quiz button:disabled {
+  cursor: not-allowed;
+  opacity: 0.8;
 }
 
-.quiz button svg{
-    width: 20px;
-    height: 20px;
+.quiz button svg {
+  width: 20px;
+  height: 20px;
 }
 
-.quiz button svg path{
-    stroke: var(--secondary-color);
-    stroke-width: 1.6;
+.quiz button svg path {
+  stroke: var(--secondary-color);
+  stroke-width: 1.6;
 }
 
-.quiz .prev-btn{
-    background-color: #dfdfdf;
+.quiz .prev-btn {
+  background-color: #dfdfdf;
 }
 
-.quiz .prev-btn:hover{
-    background-color: #bdbdbd;
-    color: var(--secondary-color);
+.quiz .prev-btn:hover {
+  background-color: #bdbdbd;
+  color: var(--secondary-color);
 }
 
-.quiz .next-btn{
-    background-color: var(--primary-color);
-    color: var(--secondary-color);
+.quiz .next-btn {
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
 }
 
-.quiz .next-btn:hover{
-    background-color: #fa8f15;
+.quiz .next-btn:hover {
+  background-color: #fa8f15;
 }
 
-.quiz .submit-btn{
-    background-color: #fff;
-    color: var(--secondary-color);
-    border: 2px solid var(--secondary-color);
+.quiz .submit-btn {
+  background-color: #fff;
+  color: var(--secondary-color);
+  border: 2px solid var(--secondary-color);
 }
 
-.quiz .submit-btn:hover, .quiz .submit-btn:hover svg path{
-    background-color: #2c882f;
-    color: #fff;
-    stroke: #fff;
-}
-
-/* QuizEnd Component */
-.quiz-end{
-    padding: 40px 20px;
-}
-
-.quiz-end button{
-    padding: 10px 20px;
-}
-
-.quiz-end button:hover{
-    background-color: #fa8f15;
-}
-
-/* Footer Component */
-footer{
-    padding: 20px;
-    margin-top: 40px;
+.quiz .submit-btn:hover,
+.quiz .submit-btn:hover svg path {
+  background-color: #2c882f;
+  color: #fff;
+  stroke: #fff;
 }
