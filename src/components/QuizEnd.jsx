@@ -7,7 +7,7 @@ function QuizEnd(props) {
   ];
 
   return (
-    <div className="quiz-end py-10 px-5 flex flex-col items-center justify-center gap-4 text-center text-blue-950">
+    <div className="quiz-end shadow py-10 px-5 flex flex-col items-center justify-center gap-4 text-center text-blue-950">
       <h2 className="text-2xl">Quiz Completed!</h2>
       <p className="text-xl">
         Your answered {props.score} out of {props.totalQuestions} correctly.
@@ -23,7 +23,7 @@ function QuizEnd(props) {
       </p>
       <button
         onClick={props.onRestart}
-        className="py-2.5 px-5 bg-yellow-400 text-blue-950 border-none rounded-md text-xl cursor-pointer uppercase"
+        className="py-2.5 px-5 bg-yellow-400 hover:bg-yellow-600 text-blue-950 border-none rounded-md text-xl cursor-pointer uppercase"
       >
         Restart Quiz
       </button>
