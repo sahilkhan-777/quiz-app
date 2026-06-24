@@ -1,5 +1,7 @@
 import { useState } from "react";
 import quizData from "../questions";
+import EastOutlinedIcon from '@mui/icons-material/EastOutlined';
+import KeyboardBackspaceIcon from '@mui/icons-material/KeyboardBackspace';
 
 function Quiz(props) {
   const [index, setIndex] = useState(0);
@@ -37,7 +39,7 @@ function Quiz(props) {
   }
 
   return (
-    <div className="quiz shadow w-1/2 my-5 mx-auto bg-white rounded-xl py-4 px-5">
+    <div className="quiz shadow w-[calc(100%-3rem)] sm:w-[calc(100%-5rem)] lg:w-1/2 my-5 mx-auto bg-white rounded-xl py-4 px-5">
       <p className="mb-3 text-2xl font-bold text-blue-950">{quizData[index].question}</p>
       <form onSubmit={checkAnswer}>
         {quizData[index].options.map((option, i) => (
@@ -66,28 +68,10 @@ function Quiz(props) {
             onClick={prevQuestion}
             className="quiz-btns bg-neutral-300 hover:bg-neutral-400"
           >
-            <svg
-              viewBox="0 0 25 25"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-              <g
-                id="SVGRepo_tracerCarrier"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              ></g>
-              <g id="SVGRepo_iconCarrier">
-                {" "}
-                <path
-                  d="M12 18L6.5 12.5L12 7M6.5 12.5H19"
-                  stroke-width="1.2"
-                ></path>{" "}
-              </g>
-            </svg>
+            <KeyboardBackspaceIcon />
             Previous
           </button>
-          <button type="submit" className="group submit-button quiz-btns bg-white hover:bg-green-600">
+          <button type="submit" className="quiz-btns submit-button bg-white hover:bg-green-600">
             <svg
               viewBox="0 0 24 24"
               fill="none"
@@ -122,25 +106,7 @@ function Quiz(props) {
             className="quiz-btns bg-yellow-400 hover:bg-yellow-500"
           >
             Next
-            <svg
-              viewBox="0 0 25 25"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-              <g
-                id="SVGRepo_tracerCarrier"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              ></g>
-              <g id="SVGRepo_iconCarrier">
-                {" "}
-                <path
-                  d="M13 7L18.5 12.5L13 18M18.5 12.5H6"
-                  stroke-width="1.2"
-                ></path>{" "}
-              </g>
-            </svg>
+            <EastOutlinedIcon />
           </button>}
         </div>
       </form>
