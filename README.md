@@ -68,7 +68,3 @@ const questions = [
 
 export default questions;
 ```
-
-## Future Improvements
-* Replace Vanilla CSS with Tailwind CSS 
-* Make the page responsive
