@@ -61,7 +61,7 @@ function Quiz(props) {
             </label>
           </div>
         ))}
-        <div className="flex justify-between my-20 mx-0 gap-5">
+        <div className="flex flex-col sm:flex-row justify-between my-20 mx-0 gap-5">
           <button
             disabled={index === 0}
             type="button"
